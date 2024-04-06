@@ -37,6 +37,510 @@
 <!--EXTERNAL CSS-->
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="style.css">
+<style>
+  *,html{
+    scroll-behavior: smooth;
+    }
+    *, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+    :root{
+    scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
+    scrollbar-width: thin !important;
+    }
+    ::-webkit-scrollbar {
+    height: 12px;
+    width: 8px;
+    background: #000;
+    }
+    ::-webkit-scrollbar-thumb {
+    background: gray;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+    }
+    ::-webkit-scrollbar-corner {
+    background: #000;
+    }
+    
+    
+    
+    
+    
+    
+    
+    /*DEFAULT*/
+    body{
+    margin:0;
+    overflow:hidden;
+    overflow-x:hidden;
+    font-family: 'Merriweather', serif;
+    }
+    a{
+    text-decoration:none;
+    }
+    ul{
+    position:relative;
+    left:-30px;
+    }
+    li{
+    list-style:none;
+    margin:20px 0;
+    line-height:1.4em;
+    }
+    a,li,button{
+    transition:0.5s;
+    }
+    a{
+    cursor:pointer;
+    }
+    b,strong{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight:700;
+    }
+    em{
+    color:#d5c455;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight:700;
+    font-size:0.8em;
+    font-style:normal;
+    }
+    img{
+    width:90%;
+    height:90%;
+    margin:auto;
+    }
+    .title{
+    font-size:2em;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight:700;
+    }
+    .sub-title{
+    font-size:1.4em;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight:400;
+    color:gray;
+    line-height:1.5em;
+    }
+    .btn1{
+    background-image: linear-gradient(to right, #000000 0%, #434343  51%, #000000  100%);
+    margin: 10px;
+    padding: 15px 35px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 3px #eee;
+    border-radius: 40px;
+    display: block;
+    width:200px;
+    }
+    .btn1:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+    }
+    .btn2{
+    padding:15px 20px;
+    text-align:center;
+    outline:none;
+    border:0;
+    background:#d5c455;
+    color:#000;
+    width:150px;
+    font-size:13px;
+    }
+    .btn3{
+    padding:15px 20px;
+    text-align:center;
+    outline:none;
+    border:0;
+    background:#fff;
+    color:#000;
+    width:150px;
+    font-size:13px;
+    }
+    .btn2:hover,.btn3:hover{
+    box-shadow:0px 6px 16px -6px rgba(1,1,1,0.5);
+    }
+    table{
+    width:100%;
+    }
+    table td{
+    width:50%;
+    padding:20px;
+    }
+    .title_header{
+    width:100%;
+    text-align:center;
+    display:block;
+    margin:2vh 0;
+    }
+    
+    @media (max-width:800px){
+    table td{
+    min-width:100%;
+    display:block;
+    }
+    }
+    
+    
+    
+    
+    
+    
+    /*CONTAINER*/
+    .container{
+    width:100%;
+    height:100vh;
+    background-color: #ffffff;
+    background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+    }
+    
+    /*SECTION1*/
+    .container .section1{
+    background-color: #ffffff;
+    background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+    z-index:99;
+    }
+    
+    .container .section1 .btn1{ 
+    margin:auto;
+    margin:4vh auto;
+    }
+    
+    .container .section1 ul{
+    width:48%;
+    display:inline-block;
+    vertical-align:top;
+    }
+    
+    .container .section1 ul li:before{
+    content:"\f0a4";
+    font-family:"FontAwesome";
+    color:#d5c455;
+    margin:0 5px;
+    }
+    
+    .container .section1 .content{
+    width:100%;
+    background:#d5c455;
+    padding:5vh 0;
+    }
+    
+    .container .section1 .content table{
+    width:90%;
+    margin:auto;
+    }
+    
+    .container .section1 .content table td{
+    width:30%;
+    transition:0.5s;
+    }
+    
+    .progress_bar_container{
+    width:90%;
+    height:12px;
+    border-radius:20px;
+    background:#d6eaf8;
+    text-align:center;
+    color:#fff;
+    font-size:0.6em;
+    margin:8px 0;
+    }
+    
+    .progress_bar_container .progress_bar{
+    background:#000;
+    border-radius:20px;
+    }
+    
+    
+    /*SECTION2*/
+    .container .section2{
+    width:100%;
+    height:100vh;
+    position:absolute;
+    top:0;
+    }
+    
+    .container .section2 .left_section,.container .section2 .right_section{
+    width:50%;
+    height:100vh;
+    background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+    vertical-align:top;
+    transition:0.6s;
+    overflow-x: hidden;
+    }
+    
+    .container .section2 .left_section section{
+    padding:5em;
+    position:relative;
+    height:100vh;
+    }
+    
+    .container .section2 .left_section section footer{
+    position:absolute;
+    bottom:10px;
+    font-size:13px;
+    color:gray;
+    }
+    
+    .container .section2 .left_section section .title{
+    font-size:3em;
+    }
+    
+    .container .section2 .right_section{
+    background:#111111;
+    position:absolute;
+    top:0;
+    right:0;
+    }
+    
+    
+    .cards {
+    position: relative;
+    width: 90%;
+    height:100vh;
+    overflow: hidden;
+    margin:auto;
+    border-radius: 5px;
+    }
+    
+    .cards::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 900;
+    
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+    
+    }
+    .card_part {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-size:100% 100%;
+    transform: translateX( 700px );
+    background-image: url("https://wallpapercave.com/wp/wp2324684.jpg");
+    background-repeat:no-repeat;
+    animation: opaqTransition 28s cubic-bezier(0, 0, 0, 0.97) infinite;
+    }
+    
+    .card_part.card_part-two {
+    z-index: 6;
+    background-image: url("https://i.pinimg.com/736x/49/84/0f/49840fb6d734d44d6b9ac668056faa44.jpg");
+    animation-delay: 7s;
+    background-repeat:no-repeat;
+    }
+    
+    .card_part.card_part-three {
+    z-index: 5;
+    background-image: url("https://i.pinimg.com/736x/0d/3f/d4/0d3fd4a106b264ca81dd87933da57f52.jpg");
+    animation-delay: 14s;
+    background-repeat:no-repeat;
+    }
+    
+    .card_part.card_part-four {
+    z-index: 4;
+    background-image: url("https://modernpaintbynumbers.com/wp-content/uploads/2020/12/blue-hacker-paint-by-numbers-510x639.jpg");
+    animation-delay: 21s;
+    background-repeat:no-repeat;
+    }
+    
+    
+    @keyframes opaqTransition {
+    3% { transform: translateX( 0 ); }
+    25% { transform: translateX( 0 ); }
+    28% { transform: translateX( -700px ); }
+    100% { transform: translateX( -700px ); }
+    }
+    
+    @media (max-width:800px){
+    .container .section1{
+    min-height:50vh;
+    }
+    .container .section2 .left_section section{
+    padding:2em;
+    position:relative;
+    height:50vh;
+    }
+    .container .section2{
+    width:100%;
+    height:100vh;
+    position:absolute;
+    top:0;
+    }
+    .container .section2 .left_section,.container .section2 .right_section{
+    width:100%;
+    display:block;
+    height:50vh;
+    }
+    .container .section2 .right_section{
+    background:#d5c455;
+    position:static;
+    top:0;
+    right:0;
+    }
+    .container .section2 .left_section section .title{
+    font-size:2em;
+    }
+    .cards {
+    position: relative;
+    width: 70%;
+    height:50vh;
+    overflow: hidden;
+    margin:auto;
+    border-radius: 5px;
+    }
+    .container .section1 ul{
+    width:90%;
+    display:block;
+    vertical-align:top;
+    }
+    .btn1{
+    background-image: linear-gradient(to right, #000000 0%, #434343  51%, #000000  100%);
+    margin: 10px;
+    padding: 15px 35px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 40px;
+    display: block;
+    width:200px;
+    }
+    .btn2{
+    padding:10px 20px;
+    text-align:center;
+    outline:none;
+    border:0;
+    background:#d5c455;
+    color:#000;
+    width:150px;
+    font-size:14px;
+    }
+    .btn3{
+    padding:10px 20px;
+    text-align:center;
+    outline:none;
+    border:0;
+    background:#fff;
+    color:#000;
+    width:150px;
+    font-size:14px;
+    }
+    .container .section2 .left_section section footer{
+    font-size:12px;
+    }
+    }
+    
+    
+    
+    
+    
+    
+    
+    .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content */
+    .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
+    }
+    
+    /* Add Animation */
+    @-webkit-keyframes animatetop {
+      from {top:-300px; opacity:0} 
+      to {top:0; opacity:1}
+    }
+    
+    @keyframes animatetop {
+      from {top:-300px; opacity:0}
+      to {top:0; opacity:1}
+    }
+    
+    
+    /* The Close Button */
+    .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    }
+    
+    .modal-content form{
+    width:90%;
+    margin:auto;
+    }
+    
+    .modal-content input,.modal-content textarea{
+    width:60%;
+    padding:20px 5px;
+    border:0;
+    background: #ebf5fb ;
+    border-left:2px solid #d5c455;
+    margin:10px 0;
+    display:block; 
+    resize:none;
+    outline:none;
+    }
+    
+    .modal-content .btn2{
+    width:200px;
+    }
+    
+    @media (max-width:800px){
+    .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 90%;
+    }
+    .modal-content input,.modal-content textarea{
+    width:95%;
+    
+    }
+    }
+</style>
 </head>
 <body>
 
@@ -162,6 +666,40 @@
 </div>
 
 </div>
+<!--JAVASCRIPT-->
+<script src="js/custom.js"></script>
+<script src="js/animate.js"></script>
+<script>
+  function innercontent(){
+    document.getElementById("left_section").style.width="0px";
+    document.getElementById("right_section").style.width="0px";
+    document.body.style.overflow="auto";
+    }
+    
+    function closeinnersection(){
+    document.getElementById("left_section").style.width="50%";
+    document.getElementById("right_section").style.width="50%";
+    document.body.style.overflow="hidden";
+    }
+    
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+    modal.style.display = "block";
+    }
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+    }
+</script>
+</body>
+</html>
 <!--JAVASCRIPT-->
 <script src="js/custom.js"></script>
 <script src="js/animate.js"></script>
